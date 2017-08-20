@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The normal distribution &mdash; IntroQG 2017.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="IntroQG 2017.0 documentation" href="../../index.html"/>
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> IntroQG
+          
+
+          
+            
+            <img src="../../_static/QG-logo-2017.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Course information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/course-details.html">Course details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/licensing.html">Content licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IntroQG</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>The normal distribution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/lessons/lesson-8/normal-distribution.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-normal-distribution">
+<h1>The normal distribution<a class="headerlink" href="#the-normal-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>*normal distribution*</strong>, also known as the <strong>*Gaussian*</strong>, refers
+to the mathematical function used to describe the bell-shaped curve of
+expected values for any measurement subject to small random errors.
+Probably most of you have already seen this distribution before, and
+here we briefly outline its definition and use.</p>
+<p><img alt="The normal distribution" src="lessons/lesson-8/../Images/Gaussian.png" /> <em>Figure 5. The normal distribution of cinder
+code slope angles. Source: Figure 7.1 from `McKillup and Dyar,
+2010 &lt;http://www.cambridge.org/fi/academic/subjects/earth-and-environmental-science/earth-science-general-interest/geostatistics-explained-introductory-guide-earth-scientists?format=HB&amp;isbn=9780521763226&gt;`__</em>.</p>
+<p>Many geological values can be described using the <em>normal distribution</em>,
+where the most common measured values are proximal to the <em>mean</em>, but
+small numbers of measurements may have values quite far from the mean.
+The example in Figure 5 is for the slope angles of cinder cones, which
+may be expected to be similar in many cases. This might relate to the
+angle of repose of the cinders that form the cone.</p>
+<p><img alt="The normal distribution and standard deviations" src="lessons/lesson-8/../Images/Gaussian-sd.png" /> <em>Figure 6. The
+relationships between the normal distribution and standard deviation.
+Source: Figure 7.3 from `McKillup and Dyar,
+2010 &lt;http://www.cambridge.org/fi/academic/subjects/earth-and-environmental-science/earth-science-general-interest/geostatistics-explained-introductory-guide-earth-scientists?format=HB&amp;isbn=9780521763226&gt;`__</em>.</p>
+<p>Assuming we have a representative sample, the <em>standard deviation</em> can
+be related to the percentage of measurements that would be expected to
+fall within some distance from the <em>mean</em>. If the sample is
+representative, the sample mean <em>x</em>-bar and population mean <em>µ</em> should
+be the same. In this case, ~68% of measurements should be within
+plus/minus one standard deviation of the mean, and ~95% should fall
+within plus/minus two standard deviations.</p>
+<p>You will learn more about the <em>normal distribution</em> in the exercise for
+this week.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, David Whipp, University of Helsinki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br/><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /></a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2017.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

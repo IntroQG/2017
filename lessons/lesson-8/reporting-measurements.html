@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reporting measurements &mdash; IntroQG 2017.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="IntroQG 2017.0 documentation" href="../../index.html"/>
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> IntroQG
+          
+
+          
+            
+            <img src="../../_static/QG-logo-2017.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2017.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Course information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/course-details.html">Course details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/licensing.html">Content licenses</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IntroQG</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Reporting measurements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/lessons/lesson-8/reporting-measurements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reporting-measurements">
+<h1>Reporting measurements<a class="headerlink" href="#reporting-measurements" title="Permalink to this headline">¶</a></h1>
+<p>How best to report a measured value may vary considerably depending on
+who you ask, their scientific field, and many other factors. Here, we’ll
+keep it simply and present how measured values should be reported in
+general, and how to calculate various important related values.</p>
+<div class="section" id="reporting-a-measured-value">
+<h2>Reporting a measured value<a class="headerlink" href="#reporting-a-measured-value" title="Permalink to this headline">¶</a></h2>
+<p>In general, measured values should be reported as the best estimate of
+the true value plus/minus the uncertainty in the measurement.
+Mathematically, this means we should state</p>
+<p><img alt="Reported measurement" src="lessons/lesson-8/../Images/measurement.png" /> <em>Equation 1. The general form for reporting a
+measurement, where xbest is the best estimate of the true value and dx
+is the uncertainty</em>.</p>
+<p>For a given set of measurements, a common estimate of the true value is
+to take the <em>average</em> or <em>mean</em> value of the set of measurements. The
+<strong>*mean*</strong> is simply the sum of the measured values divided by the
+number of measurements.</p>
+<p><img alt="Mean value" src="lessons/lesson-8/../Images/mean.png" /> <em>Equation 2. The mean value of a set of N measurements,
+xi. If you are unfamiliar with sigma notation, you may want to check out
+the `hints for this week’s exercise &lt;hints.md&gt;`__</em>.</p>
+<p>How much each measurement differs from the mean can be found by
+determining the <em>deviation</em> or <em>residual</em> of each measurement. The
+<strong>*deviation*</strong> is simply the signed difference between the measured and
+mean values.</p>
+<p><img alt="Deviation" src="lessons/lesson-8/../Images/deviation.png" /> <em>Equation 3. The deviation for measurement xi</em>.</p>
+<p>A small <em>deviation</em> indicates precise measurments. Given the calculation
+for the <em>mean</em>, it might be tempting to estimate the deviation for <em>N</em>
+measurements by calculating its average. The problem is that the average
+deviation is exactly zero, so another estimate is needed. The
+<strong>*standard deviation*</strong> is simply the square root of the sum of the
+deviations squared and divided by the number of measurements.</p>
+<p><img alt="Standard deviation" src="lessons/lesson-8/../Images/standard-deviation.png" /> <em>Equation 4. The standard deviation</em>.</p>
+<p>The <em>standard deviation</em> provides a good estimate of how much a given
+measurment might be expected to differ from the <em>mean</em>. One issue with
+the equation listed above is that it does not work well in the extreme
+case of a single measurement. In that case, the calculated standard
+deviation is exactly zero, suggesting we have no uncertainty for a
+single measurement. As a result, the alternative form of the standard
+deviation given below is often used.</p>
+<p><img alt="Standard deviation alternative" src="lessons/lesson-8/../Images/standard-deviation-alt.png" /> <em>Equation 5. An alternative form of
+the standard deviation</em>.</p>
+<p>In this version of the standard deviation equation, the standard
+deviation is undefined for a single measurement (due to dividing by
+zero).</p>
+<p>An alternative measure of uncertainty that is sometimes used is the
+<em>standard deviation of the mean</em> or <em>standard error</em>. The <strong>*standard
+error*</strong> is simply the standard deviation divided by the square root of
+the number of samples.</p>
+<p><img alt="Standard error" src="lessons/lesson-8/../Images/standard-error.png" /> <em>Equation 6. The standard error</em>.</p>
+<p>As you can see, the standard error will decrease as the number of
+samples <em>N</em> increases.</p>
+</div>
+<div class="section" id="standard-deviation-versus-standard-error">
+<h2>Standard deviation versus standard error<a class="headerlink" href="#standard-deviation-versus-standard-error" title="Permalink to this headline">¶</a></h2>
+<p>So, these two things both can be used to represent uncertainty in a
+measurement, but how do they differ? The <em>standard deviation</em> measures
+how widely scattered measurements are from the <em>mean</em>. The <em>standard
+error</em> measures the uncertainty in the estimate of the <em>mean</em>. In
+general, it is preferable to report the <em>standard error</em>, but with two
+such similar terms it is important <strong>no matter what</strong> to be clear
+whether you are reporting the standard deviation or standard error.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, David Whipp, University of Helsinki.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br/><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /></a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2017.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
