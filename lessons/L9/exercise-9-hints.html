@@ -142,6 +142,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#shorthand-python-notation-for-adding-to-a-variable">Shorthand Python notation for adding to a variable</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-2">Problem 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reading-in-data-with-a-datetime-index">Reading in data with a datetime index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-the-nan-values-to-avoid-problems-with-the-regression-calculations">Drop the nan values to avoid problems with the regression calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-values-to-get-array-values-for-calculating-a-and-b">Use .values to get array values for calculating A and B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-year-for-calculating-the-regression-lines">Use the year for calculating the regression lines</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -299,6 +306,110 @@ Because of this, there is a shorthand notation in Python for just this kind of o
 </div>
 <p>As you can see, <code class="docutils literal"><span class="pre">number</span> <span class="pre">+=</span> <span class="pre">5</span></code> is exactly the same as <code class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">number</span> <span class="pre">+</span> <span class="pre">5</span></code>, just written a bit more compactly.
 As you might imagine, there are similar shortcuts for subtracting (<code class="docutils literal"><span class="pre">-=</span></code>), multiplying (<code class="docutils literal"><span class="pre">*=</span></code>), and dividing (<code class="docutils literal"><span class="pre">/=</span></code>).</p>
+</div>
+</div>
+<div class="section" id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reading-in-data-with-a-datetime-index">
+<h3>Reading in data with a datetime index<a class="headerlink" href="#reading-in-data-with-a-datetime-index" title="Permalink to this headline">¶</a></h3>
+<p>One of your first tasks in this problem is to read in a datafile that was generated from a Pandas DataFrame with a datetime index.
+There are several ways in which the data file can be read, but one of the easier options is to read it in with the necessary parameters to make sure the date information is properly treated as a datetime index.
+This will give you a DataFrame that is just like that you were using in <a class="reference external" href="https://github.com/Geo-Python-2017/Exercise-7">Exercise 7 of the Geo-Python part of the course</a>.
+To read in data where one column contains dates that should be used as the index, you can do the following:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;some_file.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;dates&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Assuming that the name of the date column is <code class="docutils literal"><span class="pre">dates</span></code>, <code class="docutils literal"><span class="pre">index_col</span></code> specifies which column in the data file should be used as the index in the DataFrame, and <code class="docutils literal"><span class="pre">parse_dates</span></code> tells Pandas to treat the index column data as datetime values.
+As mentioned, there are alternative options, but this is a clean way to read in data to Pandas with a datetime index.</p>
+</div>
+<div class="section" id="drop-the-nan-values-to-avoid-problems-with-the-regression-calculations">
+<h3>Drop the nan values to avoid problems with the regression calculations<a class="headerlink" href="#drop-the-nan-values-to-avoid-problems-with-the-regression-calculations" title="Permalink to this headline">¶</a></h3>
+<p>Once you have read in the climate data and filled in your DataFrame that contains the seasonal average temperatures and standard deviations in temperature, you&#8217;ll want to get rid of any <code class="docutils literal"><span class="pre">nan</span></code> (not a number) values for the seasonal temperatures.
+The reason for this is that you will have problems calculating the <code class="docutils literal"><span class="pre">A</span></code> and <code class="docutils literal"><span class="pre">B</span></code> values if there are any <code class="docutils literal"><span class="pre">nan</span></code> values.
+Consider the following example:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">testArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="gp">In [19]: </span><span class="k">print</span><span class="p">(</span><span class="n">testArray</span><span class="p">)</span>
+<span class="go">[  0.   1.   2.   3.   4.   5.   6.   7.   8.   9.  10.]</span>
+
+<span class="gp">In [20]: </span><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">testArray</span><span class="p">))</span>
+<span class="go">                                                         55.0</span>
+
+<span class="gp">In [21]: </span><span class="n">testArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="gp">In [22]: </span><span class="k">print</span><span class="p">(</span><span class="n">testArray</span><span class="p">)</span>
+<span class="go">[  0.   1.   2.   3.  nan   5.   6.   7.   8.   9.  10.]</span>
+
+<span class="gp">In [23]: </span><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">testArray</span><span class="p">))</span>
+<span class="go">                                                         nan</span>
+
+<span class="gp">In [24]: </span><span class="k">print</span><span class="p">(</span><span class="n">testArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">testArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="go">                                                             nan</span>
+</pre></div>
+</div>
+<p>As you can see, if you sum or add values containing a <code class="docutils literal"><span class="pre">nan</span></code> your sum will be <code class="docutils literal"><span class="pre">nan</span></code>.
+Unlike plotting data containing <code class="docutils literal"><span class="pre">nan</span></code> values, that is not good for sums.</p>
+</div>
+<div class="section" id="use-values-to-get-array-values-for-calculating-a-and-b">
+<h3>Use .values to get array values for calculating A and B<a class="headerlink" href="#use-values-to-get-array-values-for-calculating-a-and-b" title="Permalink to this headline">¶</a></h3>
+<p>When doing your regression line calculations you will want to be sure to be working with simple array data, rather than Pandas DataFrame data.
+What?!?
+Yeah, so it turns out that you can&#8217;t easily do math with Pandas DataFrame values, so you need to convert those values into a simpler structure.
+NumPy is the basis for the Pandas DataFrame, so it is quite easy to do this.
+Again, I&#8217;ll show an example.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="gp">In [26]: </span><span class="n">testDF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">,</span> <span class="s1">&#39;Col2&#39;</span><span class="p">])</span>
+
+<span class="gp">In [27]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
+<span class="go">       Col1      Col2</span>
+<span class="go">0  0.744353 -0.762649</span>
+<span class="go">1 -1.228877  0.689352</span>
+<span class="go">2  0.140202 -1.662614</span>
+<span class="go">3  1.409002  0.002237</span>
+
+<span class="gp">In [28]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span>
+<span class="go">                                                                                                              Out[28]: </span>
+<span class="go">0    0.744353</span>
+<span class="go">1   -1.228877</span>
+<span class="go">2    0.140202</span>
+<span class="go">3    1.409002</span>
+<span class="go">Name: Col1, dtype: float64</span>
+
+<span class="gp">In [29]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="go">                                                                                                                                                                                                           Out[29]: array([ 0.74435264, -1.22887731,  0.14020166,  1.40900161])</span>
+</pre></div>
+</div>
+<p>As you can perhaps see, <code class="docutils literal"><span class="pre">testDF</span></code> is a basic Pandas DataFrame with two columns <code class="docutils literal"><span class="pre">Col1</span></code> and <code class="docutils literal"><span class="pre">Col2</span></code> with random values.
+Taking a single column from this DataFrame <code class="docutils literal"><span class="pre">testDF['Col1']</span></code> returns a Pandas Series.
+Alternatively, <code class="docutils literal"><span class="pre">testDF['Col1'].values</span></code> produces a NumPy array of that same data.
+You will likely find that you&#8217;re not able to do your calculations of <code class="docutils literal"><span class="pre">A</span></code> and <code class="docutils literal"><span class="pre">B</span></code> for the regression lines unless you use the <code class="docutils literal"><span class="pre">.values</span></code> attribute.</p>
+</div>
+<div class="section" id="use-the-year-for-calculating-the-regression-lines">
+<h3>Use the year for calculating the regression lines<a class="headerlink" href="#use-the-year-for-calculating-the-regression-lines" title="Permalink to this headline">¶</a></h3>
+<p>You do not need the day and month when trying to calculate the regression lines.
+Instead, you only want the observation year.
+Assuming you have a datetime index for your data, you can get the years as follows:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
+<span class="go">       Col1      Col2</span>
+<span class="go">0  0.744353 -0.762649</span>
+<span class="go">1 -1.228877  0.689352</span>
+<span class="go">2  0.140202 -1.662614</span>
+<span class="go">3  1.409002  0.002237</span>
+
+<span class="gp">In [31]: </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;AS&#39;</span><span class="p">)</span>
+
+<span class="gp">In [32]: </span><span class="n">testDF</span> <span class="o">=</span> <span class="n">testDF</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+<span class="gp">In [33]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="go">DatetimeIndex([&#39;2013-01-01&#39;, &#39;2014-01-01&#39;, &#39;2015-01-01&#39;, &#39;2016-01-01&#39;], dtype=&#39;datetime64[ns]&#39;, freq=&#39;AS-JAN&#39;)</span>
+
+<span class="gp">In [34]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="go">                                                                                                               Int64Index([2013, 2014, 2015, 2016], dtype=&#39;int64&#39;)</span>
+</pre></div>
+</div>
+<p>As you can see, if we add a datetime index to <code class="docutils literal"><span class="pre">testDF</span></code>, we can output the index range by typing <code class="docutils literal"><span class="pre">print(testDF.index)</span></code>.
+To get the equivalent data in years only, we print <code class="docutils literal"><span class="pre">print(testDF.index.year)</span></code>.</p>
 </div>
 </div>
 </div>
