@@ -138,11 +138,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#problem-1">Problem 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-plot">Example plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#calculating-summations">Calculating summations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#shorthand-python-notation-for-adding-to-a-variable">Shorthand Python notation for adding to a variable</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#problem-2">Problem 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reading-in-data-with-a-datetime-index">Reading in data with a datetime index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#drop-the-nan-values-to-avoid-problems-with-the-regression-calculations">Drop the nan values to avoid problems with the regression calculations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-values-to-get-array-values-for-calculating-a-and-b">Use .values to get array values for calculating A and B</a></li>
@@ -260,6 +262,14 @@ You may not often need to do this, but it is possible.</p>
 </div>
 <div class="section" id="problem-1">
 <h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-plot">
+<h3>Example plot<a class="headerlink" href="#example-plot" title="Permalink to this headline">¶</a></h3>
+<p>Your code for this problem should produce a plot similar to the one below.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/Ex9.1-gof.png"><img alt="Plot for Problem 9.1" src="../../_images/Ex9.1-gof.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Example plot for Problem 1.</span></p>
+</div>
+</div>
 <div class="section" id="calculating-summations">
 <h3>Calculating summations<a class="headerlink" href="#calculating-summations" title="Permalink to this headline">¶</a></h3>
 <p>There are several ways in which you can calculate a summation in Python, including using the <code class="docutils literal"><span class="pre">sum()</span></code> function.
@@ -310,6 +320,18 @@ As you might imagine, there are similar shortcuts for subtracting (<code class="
 </div>
 <div class="section" id="problem-2">
 <h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Example plot<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Your code for this problem should produce plots similar to the two below.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/Ex9.2-all-years.png"><img alt="Plot for Problem 9.1" src="../../_images/Ex9.2-all-years.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Example plot for Problem 2 with all years of climate data.</span></p>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/Ex9.2-20-years.png"><img alt="Plot for Problem 9.1" src="../../_images/Ex9.2-20-years.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Example plot for Problem 2 with the last 20 years of climate data.</span></p>
+</div>
+</div>
 <div class="section" id="reading-in-data-with-a-datetime-index">
 <h3>Reading in data with a datetime index<a class="headerlink" href="#reading-in-data-with-a-datetime-index" title="Permalink to this headline">¶</a></h3>
 <p>One of your first tasks in this problem is to read in a datafile that was generated from a Pandas DataFrame with a datetime index.
@@ -363,21 +385,21 @@ Again, I&#8217;ll show an example.</p>
 
 <span class="gp">In [27]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0  0.744353 -0.762649</span>
-<span class="go">1 -1.228877  0.689352</span>
-<span class="go">2  0.140202 -1.662614</span>
-<span class="go">3  1.409002  0.002237</span>
+<span class="go">0  0.942320 -1.599242</span>
+<span class="go">1  1.576183 -1.844970</span>
+<span class="go">2  1.134985 -1.495036</span>
+<span class="go">3 -0.089786  0.121041</span>
 
 <span class="gp">In [28]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span>
 <span class="go">                                                                                                              Out[28]: </span>
-<span class="go">0    0.744353</span>
-<span class="go">1   -1.228877</span>
-<span class="go">2    0.140202</span>
-<span class="go">3    1.409002</span>
+<span class="go">0    0.942320</span>
+<span class="go">1    1.576183</span>
+<span class="go">2    1.134985</span>
+<span class="go">3   -0.089786</span>
 <span class="go">Name: Col1, dtype: float64</span>
 
 <span class="gp">In [29]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="go">                                                                                                                                                                                                           Out[29]: array([ 0.74435264, -1.22887731,  0.14020166,  1.40900161])</span>
+<span class="go">                                                                                                                                                                                                           Out[29]: array([ 0.94231954,  1.57618307,  1.13498503, -0.08978618])</span>
 </pre></div>
 </div>
 <p>As you can perhaps see, <code class="docutils literal"><span class="pre">testDF</span></code> is a basic Pandas DataFrame with two columns <code class="docutils literal"><span class="pre">Col1</span></code> and <code class="docutils literal"><span class="pre">Col2</span></code> with random values.
@@ -392,10 +414,10 @@ Instead, you only want the observation year.
 Assuming you have a datetime index for your data, you can get the years as follows:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0  0.744353 -0.762649</span>
-<span class="go">1 -1.228877  0.689352</span>
-<span class="go">2  0.140202 -1.662614</span>
-<span class="go">3  1.409002  0.002237</span>
+<span class="go">0  0.942320 -1.599242</span>
+<span class="go">1  1.576183 -1.844970</span>
+<span class="go">2  1.134985 -1.495036</span>
+<span class="go">3 -0.089786  0.121041</span>
 
 <span class="gp">In [31]: </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;AS&#39;</span><span class="p">)</span>
 
@@ -435,7 +457,7 @@ To get the equivalent data in years only, we print <code class="docutils literal
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, David Whipp, University of Helsinki.
-      Last updated on Nov 08, 2017.
+      Last updated on Nov 10, 2017.
 
     </p>
   </div>
