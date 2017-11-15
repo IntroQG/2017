@@ -163,6 +163,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L10/ex-10.html">Exercise 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L10/exercise-10-hints.html">Hints for Exercise 10</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Final report</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/final-report.html">Final paper information</a></li>
+</ul>
 
             
           
@@ -394,21 +398,21 @@ Again, I&#8217;ll show an example.</p>
 
 <span class="gp">In [27]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0 -1.476592  0.909159</span>
-<span class="go">1 -0.653048  0.000377</span>
-<span class="go">2  1.369092 -0.122750</span>
-<span class="go">3  1.160892  1.597433</span>
+<span class="go">0 -0.537327  1.574513</span>
+<span class="go">1  0.893403 -0.532202</span>
+<span class="go">2  0.387387 -1.116740</span>
+<span class="go">3  0.135171  1.467096</span>
 
 <span class="gp">In [28]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span>
 <span class="go">                                                                                                              Out[28]: </span>
-<span class="go">0   -1.476592</span>
-<span class="go">1   -0.653048</span>
-<span class="go">2    1.369092</span>
-<span class="go">3    1.160892</span>
+<span class="go">0   -0.537327</span>
+<span class="go">1    0.893403</span>
+<span class="go">2    0.387387</span>
+<span class="go">3    0.135171</span>
 <span class="go">Name: Col1, dtype: float64</span>
 
 <span class="gp">In [29]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="go">                                                                                                                                                                                                           Out[29]: array([-1.47659233, -0.65304783,  1.36909162,  1.16089171])</span>
+<span class="go">                                                                                                                                                                                                           Out[29]: array([-0.53732746,  0.89340266,  0.38738675,  0.13517109])</span>
 </pre></div>
 </div>
 <p>As you can perhaps see, <code class="docutils literal"><span class="pre">testDF</span></code> is a basic Pandas DataFrame with two columns <code class="docutils literal"><span class="pre">Col1</span></code> and <code class="docutils literal"><span class="pre">Col2</span></code> with random values.
@@ -423,10 +427,10 @@ Instead, you only want the observation year.
 Assuming you have a datetime index for your data, you can get the years as follows:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0 -1.476592  0.909159</span>
-<span class="go">1 -0.653048  0.000377</span>
-<span class="go">2  1.369092 -0.122750</span>
-<span class="go">3  1.160892  1.597433</span>
+<span class="go">0 -0.537327  1.574513</span>
+<span class="go">1  0.893403 -0.532202</span>
+<span class="go">2  0.387387 -1.116740</span>
+<span class="go">3  0.135171  1.467096</span>
 
 <span class="gp">In [31]: </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;AS&#39;</span><span class="p">)</span>
 
@@ -468,7 +472,7 @@ To get the equivalent data in years only, we print <code class="docutils literal
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, David Whipp, University of Helsinki.
-      Last updated on Nov 13, 2017.
+      Last updated on Nov 15, 2017.
 
     </p>
   </div>
