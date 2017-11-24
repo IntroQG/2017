@@ -406,21 +406,21 @@ Again, I&#8217;ll show an example.</p>
 
 <span class="gp">In [27]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0 -1.816385  1.030848</span>
-<span class="go">1  1.233474 -0.353461</span>
-<span class="go">2 -0.710883  0.037236</span>
-<span class="go">3 -0.202852  0.830567</span>
+<span class="go">0  0.458138 -0.322277</span>
+<span class="go">1 -1.001667  0.519224</span>
+<span class="go">2  1.404388 -1.242394</span>
+<span class="go">3  0.124556 -0.174996</span>
 
 <span class="gp">In [28]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span>
 <span class="go">                                                                                                              Out[28]: </span>
-<span class="go">0   -1.816385</span>
-<span class="go">1    1.233474</span>
-<span class="go">2   -0.710883</span>
-<span class="go">3   -0.202852</span>
+<span class="go">0    0.458138</span>
+<span class="go">1   -1.001667</span>
+<span class="go">2    1.404388</span>
+<span class="go">3    0.124556</span>
 <span class="go">Name: Col1, dtype: float64</span>
 
 <span class="gp">In [29]: </span><span class="n">testDF</span><span class="p">[</span><span class="s1">&#39;Col1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="go">                                                                                                                                                                                                           Out[29]: array([-1.81638523,  1.23347423, -0.71088323, -0.20285189])</span>
+<span class="go">                                                                                                                                                                                                           Out[29]: array([ 0.45813801, -1.00166672,  1.40438841,  0.12455573])</span>
 </pre></div>
 </div>
 <p>As you can perhaps see, <code class="docutils literal"><span class="pre">testDF</span></code> is a basic Pandas DataFrame with two columns <code class="docutils literal"><span class="pre">Col1</span></code> and <code class="docutils literal"><span class="pre">Col2</span></code> with random values.
@@ -435,10 +435,10 @@ Instead, you only want the observation year.
 Assuming you have a datetime index for your data, you can get the years as follows:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="k">print</span><span class="p">(</span><span class="n">testDF</span><span class="p">)</span>
 <span class="go">       Col1      Col2</span>
-<span class="go">0 -1.816385  1.030848</span>
-<span class="go">1  1.233474 -0.353461</span>
-<span class="go">2 -0.710883  0.037236</span>
-<span class="go">3 -0.202852  0.830567</span>
+<span class="go">0  0.458138 -0.322277</span>
+<span class="go">1 -1.001667  0.519224</span>
+<span class="go">2  1.404388 -1.242394</span>
+<span class="go">3  0.124556 -0.174996</span>
 
 <span class="gp">In [31]: </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;AS&#39;</span><span class="p">)</span>
 
@@ -480,7 +480,7 @@ To get the equivalent data in years only, we print <code class="docutils literal
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, David Whipp, University of Helsinki.
-      Last updated on Nov 20, 2017.
+      Last updated on Nov 24, 2017.
 
     </p>
   </div>
