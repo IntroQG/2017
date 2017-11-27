@@ -19,7 +19,7 @@
     </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hints for Exercise 11 &mdash; IntroQG 2017.0 documentation</title>
+  <title>Viscous flow down an incline &mdash; IntroQG 2017.0 documentation</title>
   
 
   
@@ -49,8 +49,8 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="IntroQG 2017.0 documentation" href="../../index.html"/>
-        <link rel="next" title="Lesson 12 overview" href="../L12/overview.html"/>
-        <link rel="prev" title="Exercise 11" href="ex-11.html"/>
+        <link rel="next" title="Theory for Exercise 12" href="exercise-12-theory.html"/>
+        <link rel="prev" title="Lecture" href="lesson-video.html"/>
     <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
 
@@ -144,26 +144,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../L10/exercise-10-hints.html">Hints for Exercise 10</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Lesson 11</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Lesson 11 overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lesson-video.html">Lecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solving-advection.html">Solving the advection-diffusion equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ex-11.html">Exercise 11</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Hints for Exercise 11</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#general-hints">General hints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#problem-1">Problem 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#problem-2">Problem 2</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L11/overview.html">Lesson 11 overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L11/lesson-video.html">Lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L11/solving-advection.html">Solving the advection-diffusion equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L11/ex-11.html">Exercise 11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L11/exercise-11-hints.html">Hints for Exercise 11</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Lesson 12</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/overview.html">Lesson 12 overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L12/lesson-video.html">Lecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L12/viscous-flows.html">Viscous flow down an incline</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L12/exercise-12-theory.html">Theory for Exercise 12</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L12/ex-12.html">Exercise 12</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L12/exercise-12-hints.html">Hints for Exercise 12</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Lesson 12 overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson-video.html">Lecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Viscous flow down an incline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-viscous-flow">Linear viscous flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shear-stress-in-the-fluid">Shear stress in the fluid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linking-to-viscous-flow">Linking to viscous flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viscous-flow-take-home-messages">Viscous flow take-home messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caveats">Caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-12-theory.html">Theory for Exercise 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ex-12.html">Exercise 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-12-hints.html">Hints for Exercise 12</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Final report</span></p>
 <ul>
@@ -212,13 +217,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Hints for Exercise 11</li>
+      <li>Viscous flow down an incline</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/lessons/L11/exercise-11-hints.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/lessons/L12/viscous-flows.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -231,16 +236,100 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="hints-for-exercise-11">
-<h1>Hints for Exercise 11<a class="headerlink" href="#hints-for-exercise-11" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="general-hints">
-<h2>General hints<a class="headerlink" href="#general-hints" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="viscous-flow-down-an-incline">
+<h1>Viscous flow down an incline<a class="headerlink" href="#viscous-flow-down-an-incline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Present the equations of linear viscous flow down an inclined plane</li>
+</ul>
 </div>
-<div class="section" id="problem-1">
-<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-viscous-flow">
+<h2>Linear viscous flow<a class="headerlink" href="#linear-viscous-flow" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/Allen_fig_4-12a.png"><img alt="Viscous flow down an incline" src="../../_images/Allen_fig_4-12a.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1. Viscous flow down an incline</span></p>
 </div>
-<div class="section" id="problem-2">
-<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shear-stress-in-the-fluid">
+<h3>Shear stress in the fluid<a class="headerlink" href="#shear-stress-in-the-fluid" title="Permalink to this headline">¶</a></h3>
+<p>For a fluid flowing down an inclined slope, the change in potential energy per unit area of the contact surface along some length of the slope <span class="math">\(\delta x\)</span> is</p>
+<div class="math">
+\[\begin{split}\begin{align}
+    \Delta E_{\mathrm{P}} &amp;= \rho g h \delta z\\
+    &amp;= \rho g h (\bar{u} S)
+\end{align}\end{split}\]</div>
+<p>where <span class="math">\(\Delta E_{\mathrm{P}}\)</span> is the change in potential energy,
+<span class="math">\(\rho\)</span> is the fluid density,
+<span class="math">\(g\)</span> is the acceleration due to gravity,
+<span class="math">\(h\)</span> is the thickness of the flow,
+<span class="math">\(\delta z\)</span> is the elevation change over the distance <span class="math">\(x\)</span>,
+<span class="math">\(\bar{u}\)</span> is the average flow velocity, and
+<span class="math">\(S\)</span> is the slope of the incline.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/Allen_fig_4-12b.png"><img alt="Viscous flow down an incline" src="../../_images/Allen_fig_4-12b.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2. Viscous flow down an incline</span></p>
+</div>
+<p>The downslope component of the gravity force on the flow is thus <span class="math">\(\rho g h S\)</span>, which must be opposed by the drag force at the base of the flow <span class="math">\(\tau_{0}\)</span>.
+Thus, we can say</p>
+<div class="math">
+\[\tau_{0} = \rho g h S\]</div>
+<p>We can also calculate the shear stress for any position <span class="math">\(z\)</span> above the base of the flow, which is a function of the thickness of the overlying fluid <span class="math">\((h - z)\)</span></p>
+<div class="math">
+\[\begin{split}\begin{align}
+    \tau_{z} &amp;= \rho g S (h - z) &amp;&amp; \text{Since we know that }\tau_{0} = \rho g h S\\
+    \tau_{z} &amp;= \tau_{0} \left( 1 - \frac{z}{h} \right)
+\end{align}\end{split}\]</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">What does this suggest about the shear strength as a function of depth in the fluid?</p>
+</div>
+</div>
+<div class="section" id="linking-to-viscous-flow">
+<h3>Linking to viscous flow<a class="headerlink" href="#linking-to-viscous-flow" title="Permalink to this headline">¶</a></h3>
+<p>For a laminar flow, we know <span class="math">\(\tau = \eta du/dz\)</span>, so we can rewrite the resistance equation as</p>
+<div class="math">
+\[\begin{split}\begin{align}
+    \tau_{z} &amp;= \eta \frac{du}{dz}\\
+    \tau_{z} &amp;= \rho g S (h - z)\\
+    \eta \frac{du}{dz} &amp;= \rho g S (h - z)\\
+    \frac{du}{dz} &amp;= \frac{\rho g S (h - z)}{\eta}\\
+    \frac{du}{dz} &amp;= \frac{\rho g S}{\eta} (h - z)
+\end{align}\end{split}\]</div>
+<p>If we integrate this equation with respect to <span class="math">\(z\)</span>, we find</p>
+<div class="math">
+\[\begin{split}\begin{align}
+    \int \frac{du}{dz} &amp;= \frac{\rho g S}{\eta} \int (h - z)\\
+    u &amp;= \frac{\rho g S}{\eta} \left(zh - \frac{z^{2}}{2} \right) + c_{1}
+\end{align}\end{split}\]</div>
+<p>If we assume the flow velocity <span class="math">\(u = 0\)</span> at <span class="math">\(z = 0\)</span> (the base of the flow), the constant <span class="math">\(c_{1} = 0\)</span>, so we are left with</p>
+<div class="math">
+\[u = \frac{\rho g S}{\eta} \left(zh - \frac{z^{2}}{2} \right)\]</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<ul class="last simple">
+<li>What would the velocity profile look like in this flow?</li>
+<li>Where is the maximum velocity?</li>
+<li>What happens if the viscosity decreases? Slope increases? Thickness increases?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="viscous-flow-take-home-messages">
+<h2>Viscous flow take-home messages<a class="headerlink" href="#viscous-flow-take-home-messages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The flow is a balance between the gravitational force on the fluid and resistance (drag) at the base</li>
+<li>The flow velocity increases following a parabolic geometry from <span class="math">\(u = 0\)</span> at the base to <span class="math">\(\frac{\rho g S}{\eta} \frac{z^{2}}{2}\)</span></li>
+</ul>
+</div>
+<div class="section" id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Steady-state</li>
+<li>1-D</li>
+<li>Laminar flow!</li>
+<li>Constants are constant</li>
+<li>No temperature dependence</li>
+</ul>
 </div>
 </div>
 
@@ -254,10 +343,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../L12/overview.html" class="btn btn-neutral float-right" title="Lesson 12 overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercise-12-theory.html" class="btn btn-neutral float-right" title="Theory for Exercise 12" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ex-11.html" class="btn btn-neutral" title="Exercise 11" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lesson-video.html" class="btn btn-neutral" title="Lecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
